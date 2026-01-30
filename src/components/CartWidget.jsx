@@ -2,15 +2,13 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 function CartWidget() {
-  const { cart } = useContext(CartContext);
-
-  const totalItems = cart.reduce((acc, prod) => acc + prod.quantity, 0);
+  const { totalQuantity } = useContext(CartContext);
 
   return (
     <div style={{ position: "relative", cursor: "pointer" }}>
       <span style={{ fontSize: "24px" }}>🛒</span>
 
-      {totalItems > 0 && (
+      {totalQuantity > 0 && (
         <span
           style={{
             position: "absolute",
@@ -23,7 +21,7 @@ function CartWidget() {
             fontSize: "12px",
           }}
         >
-          {totalItems}
+          {totalQuantity}
         </span>
       )}
     </div>

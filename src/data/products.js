@@ -1,7 +1,7 @@
 
 export const products = [
   {
-    id: "varita-sauco",
+    
     name: "Varita de Saúco",
     category: "varitas",
     price: 500,
@@ -10,7 +10,7 @@ export const products = [
       "Fabricada con madera de saúco y núcleo de pelo de cola de Thestral. Considerada la varita más poderosa jamás creada. Perteneció a Albus Dumbledore."
   },
   {
-    id: "varita-vid",
+   
     name: "Varita de Vid",
     category: "varitas",
     price: 450,
@@ -19,7 +19,7 @@ export const products = [
       "Madera de vid con núcleo de fibra de corazón de dragón. Ideal para hechizos precisos y avanzados. Perteneció a Hermione Granger."
   },
   {
-    id: "varita-tejo",
+    
     name: "Varita de Tejo",
     category: "varitas",
     price: 480,
@@ -28,7 +28,7 @@ export const products = [
       "Madera de tejo con núcleo de pluma de fénix. Potente y afinada para magia oscura. Perteneció a Lord Voldemort."
   },
   {
-    id: "varita-acebo",
+    
     name: "Varita de Acebo",
     category: "varitas",
     price: 460,
@@ -37,7 +37,7 @@ export const products = [
       "Madera de acebo con núcleo de pluma de fénix. Excelente para magia defensiva. Perteneció a Harry Potter."
   },
   {
-    id: "varita-nogal",
+    
     name: "Varita de Nogal",
     category: "varitas",
     price: 420,
@@ -47,7 +47,7 @@ export const products = [
   },
 
   {
-    id: "pocion-multijugos",
+    
     name: "Poción Multijugos",
     category: "pociones",
     price: 300,
@@ -56,7 +56,7 @@ export const products = [
       "Permite adoptar temporalmente la apariencia de otra persona. Requiere ingredientes complejos y un mes de preparación."
   },
   {
-    id: "felix-felicis",
+    
     name: "Felix Felicis",
     category: "pociones",
     price: 600,
@@ -65,7 +65,7 @@ export const products = [
       "Conocida como 'Suerte Líquida'. Aumenta la fortuna del bebedor durante un periodo limitado."
   },
   {
-    id: "amortentia",
+    
     name: "Amortentia",
     category: "pociones",
     price: 550,
@@ -74,7 +74,7 @@ export const products = [
       "La poción de amor más poderosa del mundo. Su aroma cambia según quien la huela."
   },
   {
-    id: "pocion-matalobos",
+    
     name: "Poción Matalobos",
     category: "pociones",
     price: 400,
@@ -83,7 +83,7 @@ export const products = [
       "Permite a los hombres lobo mantener la cordura durante la transformación. No cura la licantropía."
   },
   {
-    id: "esencia-dictamo",
+    
     name: "Esencia de Díctamo",
     category: "pociones",
     price: 350,
@@ -93,7 +93,7 @@ export const products = [
   },
 
   {
-    id: "libro-hechizos",
+    
     name: "Libro de Hechizos",
     category: "libros",
     price: 200,
@@ -102,7 +102,7 @@ export const products = [
       "Compendio de encantamientos esenciales para estudiantes de primer año en Hogwarts."
   },
   {
-    id: "pociones-avanzadas",
+    
     name: "Pociones Avanzadas",
     category: "libros",
     price: 280,
@@ -111,7 +111,7 @@ export const products = [
       "Manual detallado con recetas complejas y anotaciones del Príncipe Mestizo."
   },
   {
-    id: "animales-fantasticos",
+    
     name: "Animales Fantásticos",
     category: "libros",
     price: 250,
@@ -120,7 +120,7 @@ export const products = [
       "Guía completa de criaturas mágicas escrita por Newt Scamander."
   },
   {
-    id: "historia-magia",
+    
     name: "Historia de la Magia",
     category: "libros",
     price: 230,
@@ -129,7 +129,7 @@ export const products = [
       "Un recorrido por los eventos más importantes del mundo mágico. Escrito por Bathilda Bagshot."
   },
   {
-    id: "quidditch-tiempos",
+    
     name: "Quidditch a Través de los Tiempos",
     category: "libros",
     price: 260,
@@ -138,3 +138,6 @@ export const products = [
       "Historia, reglas y evolución del deporte más famoso del mundo mágico."
   }
 ];
+
+export default products;
+  

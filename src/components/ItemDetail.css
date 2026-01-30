@@ -17,6 +17,8 @@
 .detail-img {
   width: 100%;
   max-width: 450px;
+  height: 350px;        
+  object-fit: cover;    
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(253, 197, 0, 0.5);
   transition: 0.3s;
@@ -44,6 +46,8 @@
 .detail-description {
   margin: 15px 0;
   line-height: 1.5;
+  max-height: 200px;       
+  overflow-y: auto;        
 }
 
 .detail-price {
@@ -57,10 +61,13 @@
   .detail-container {
     flex-direction: row;
     align-items: flex-start;
+    gap: 40px;             
   }
 
   .detail-img-wrapper {
     flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
   .detail-info {

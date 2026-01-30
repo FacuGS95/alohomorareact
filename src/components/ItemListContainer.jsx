@@ -1,35 +1,45 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import ItemList from './ItemList'
-import { products } from "../data/products";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
 
-
-const getProducts = () => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve(products), 1000)
-  })
-}
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 
 function ItemListContainer({ greeting }) {
-  const [items, setItems] = useState([])
-  const { categoryId } = useParams()
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    getProducts().then(res => {
-      if (categoryId) {
-        setItems(res.filter(prod => prod.category === categoryId))
-      } else {
-        setItems(res)
-      }
-    })
-  }, [categoryId])
+    setLoading(true);
+
+    const productsRef = collection(db, "products");
+
+    const q = categoryId
+      ? query(productsRef, where("category", "==", categoryId))
+      : productsRef;
+
+    getDocs(q).then((snapshot) => {
+      const products = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setItems(products);
+      setLoading(false);
+    });
+  }, [categoryId]);
+
+  if (loading) {
+    return <p style={{ padding: "20px" }}>Cargando productos...</p>;
+  }
 
   return (
     <>
       <h2>{greeting}</h2>
       <ItemList items={items} />
     </>
-  )
+  );
 }
 
-export default ItemListContainer
+export default ItemListContainer;

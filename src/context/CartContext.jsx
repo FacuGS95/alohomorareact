@@ -21,9 +21,57 @@ export function CartProvider({ children }) {
     }
   };
 
+ 
+  const increaseQuantity = (id) => {
+    setCart(
+      cart.map((item) =>
+        item.id === id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (id) => {
+    setCart(
+      cart
+        .map((item) =>
+          item.id === id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
+  const removeItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const totalPrice = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, setCart }}>
-      {children}   
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeItem,
+        clearCart,
+        increaseQuantity,
+        decreaseQuantity,
+        totalQuantity,
+        totalPrice,
+      }}
+    >
+      {children}
     </CartContext.Provider>
   );
 }

@@ -24,17 +24,29 @@ function ItemDetail({ product, onAdd, added }) {
 
         <p className="detail-price">Precio: ${product.price}</p>
 
-        
-        {!added ? (
-          <ItemCount stock={10} initial={1} onAdd={onAdd} />
+        {/* 🔥 Si no hay stock */}
+        {product.stock === 0 ? (
+          <p className="no-stock">Producto sin stock</p>
         ) : (
-          <div className="detail-after-add">
-            <p className="success-msg">Producto agregado con éxito</p>
+          <>
+            {/* 🔥 Si NO se agregó al carrito, mostrar ItemCount */}
+            {!added ? (
+              <ItemCount
+                stock={product.stock}
+                initial={1}
+                onAdd={onAdd}
+              />
+            ) : (
+              /* 🔥 Si YA se agregó, mostrar mensaje + botón */
+              <div className="detail-after-add">
+                <p className="success-msg">Producto agregado con éxito</p>
 
-            <Link to="/cart">
-              <button className="btn-primary">Ir al carrito</button>
-            </Link>
-          </div>
+                <Link to="/cart">
+                  <button className="btn-primary">Ir al carrito</button>
+                </Link>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>
